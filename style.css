@@ -1,0 +1,250 @@
+style.css
+
+:root {
+  --lavender: #e6e6fa;
+  --plum: #5d3a6a;
+  --soft-white: #fffafc;
+  --night: #0b0c2a;
+  --pastel: #f3e5f5;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: url('stars.png'); /* or your own stars PNG */
+  z-index: -1;
+  opacity: 0.15;
+  animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.3; }
+}
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: radial-gradient(ellipse at top, #5d3a6a 0%, #e6e6fa 100%);
+  background-color: #fffafc;
+  color: #5d3a6a;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+body.dark-mode {
+  background: radial-gradient(ellipse at top, #0b0c2a 0%, #1a237e 100%);
+  background-color: #0b0c2a;
+  color: #e6e6fa;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#birthday-screen, #message-screen {
+  max-width: 600px;
+  background: #fffafc;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: opacity 1s ease;
+}
+
+body.dark-mode #birthday-screen,
+body.dark-mode #message-screen {
+  background: #0b0c2a;
+}
+
+
+header h1 {
+  font-family: 'Cookie', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.message p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 0.5rem;
+  right: 1.5rem;
+  font-size: 1.0rem;
+  background-color: transparent;
+  padding: 0.1rem;
+  z-index: 1000;
+  color: var(--plum);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+body.dark-mode #theme-toggle {
+  border-color: var(--soft-white);
+  color: var(--soft-white);
+}
+
+footer {
+  margin-top: 2rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+#intro-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: linear-gradient(to bottom right, #f8e8ff, #e0c3fc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 9999;
+  animation: fadeOut 2s ease forwards;
+  animation-delay: 5s;
+}
+
+#intro-screen h2 {
+  font-family: 'Cookie', cursive;
+  font-size: 2rem;
+  color: #5d3a6a;
+  margin-top: 1rem;
+  animation: floatIn 2s ease-in-out;
+}
+
+.intro-character {
+  width: 80px;
+  height: 80px;
+  background-image: url('girl.png'); /* example: angel */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: floatY 5s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#heart-button {
+  position: fixed;
+  top: 0.5rem;
+  left: 1.5rem;
+  font-size: 1.0rem;
+  background-color: transparent;
+  padding: 0.1rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+#heart-button:hover {
+  transform: scale(1.1);
+}
+
+#secret-modal,
+#pin-screen,
+#secret-message {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #5d3a6a;
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .modal-content {
+  background: #1c1c3c;
+  color: var(--soft-white);
+}
+
+#pin-input {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: white;
+  color: #5d3a6a;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.error-text {
+  color: crimson;
+  margin-top: 0.5rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.close-button:hover {
+  color: crimson;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}

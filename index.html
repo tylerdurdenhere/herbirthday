@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Someone Special</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+
+<!-- 💖 Heart Button -->
+<button id="heart-button" title="Open for something special">💖</button>
+
+<!-- 🎁 Secret Modal -->
+<div id="secret-modal" class="hidden">
+  <button class="close-button" data-close="secret-modal">&times;</button>
+  <div class="modal-content">
+    <p style="font-size: 12px;">I don't know whether you like me or not aana from the first time I saw you, I started liking you. மீதி இருக்கிற வாழ்க்கை full ஆ நீங்க என்னோட  இருந்தா life சந்தோஷமா ikum ndu enda மனசு சொல்லுது.  நீங்க epdi பட்டவங்க ndu கூட எனக்கு தெரியாது but பாத்த  odane I felt a connection, அதுக்கு there's a reason ndu late ஆ தான் I realised. எனக்கு தெரியும் நீங்க எத நெனச்சி பயப்பட்றீங்க apdi ndu. அதே பயம் எனக்கும் ikidhu, But அதெல்லாம் தாண்டி இது ஒரு reason காக தான் நடக்குது apdi ndu நான் நம்புறேன். இதுக்காக and உங்களுக்காக எவ்ளோ risk எடுத்தாளும், எவ்ளோ fight பண்ணினாளும்  அது worth தான் apdi ndu என்னோட intuitions சொல்லுது. இதெல்லாம் சொல்ல எனக்கு இத விட்டா வேற chance இல்ல, so ipdiye சொல்லிட்டேன். அதே மாதிரி positive intuitions உம் நம்பிக்கையும் இருந்தா and முக்கியமா only if you like me: Just say yes. இன்னும் சரியா 7 days ல, this will be disabled. Before that எந்த பதிலும் இல்ல nda I will take it as a NO and would never cross your path again. In case நீங்க next step கு ready ஆ இருந்தா, ஒரு yes மட்டும் சொல்லுங்க, then you will get the pin to see what's waiting.
+
+I will be waiting for your reply.</p>
+    <button id="ready-button">Ready?</button>
+  </div>
+</div>
+
+<!-- 🔐 PIN Entry -->
+<div id="pin-screen" class="hidden">
+  <button class="close-button" data-close="pin-screen">&times;</button>
+  <div class="modal-content">
+    <p>Enter pin</p>
+    <input type="password" id="pin-input" placeholder="Enter PIN" />
+    <button id="submit-pin">Unlock</button>
+    <p id="pin-error" class="error-text hidden">Wrong PIN! Try again.</p>
+  </div>
+</div>
+
+<!-- 💬 Secret Message -->
+<div id="secret-message" class="hidden">
+  <button class="close-button" data-close="secret-message">&times;</button>
+  <div class="modal-content">
+    <p>என்ன நடந்தாலும் சரி, I will always stand by your side until the end.
+
+I love you 💚</p>
+  </div>
+</div>
+
+<body>
+  <!-- <audio id="bg-music" loop>
+    <source src="hbdsong.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio> -->
+  <button id="theme-toggle">˗ˏˋ ★ ˎˊ˗</button>
+  <div id="intro-screen">
+    <div class="intro-character"></div>
+    <h2>Reminder : Someone who loves you is thinking of you...</h2>
+  </div>
+
+  <div id="birthday-screen" class="hidden">
+    <header>
+      <h1>Happy Birthday, Hariniya!</h1>
+      
+    </header>
+  </div>
+
+  <div id="message-screen" class="hidden">
+    <section class="message">
+      <p>On this special day, the stars seemed to align just to celebrate the magic that is you.</p>
+      <p>Maybe someday, paths will cross in the way dreams hope for.</p>
+      <p>Until then, know this: You are admired by someone in every way with purity and sincerity.</p>
+      <p>Wishing you the Happiest Birthday and a beautiful life ahead.</p>
+    </section>
+    <footer>
+      <p>— U💜</p>
+    </footer>
+  </div>
+</body>
+</html>
